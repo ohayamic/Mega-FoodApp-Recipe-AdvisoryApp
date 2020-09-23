@@ -1,10 +1,11 @@
 import React from "react";
+import { NavBar } from "./Components/NavBar";
 import "./App.css";
 
 function App() {
   return (
     <div className="App">
-      <h1>Food, Recipe and Advisory App</h1>
+      <NavBar />
     </div>
   );
 }
