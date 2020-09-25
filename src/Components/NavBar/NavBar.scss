@@ -1,0 +1,72 @@
+/*nav {
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  li { display: inline-block; }
+
+  a {
+    display: block;
+    padding: 6px 12px;
+    text-decoration: none;
+  }
+}*/
+// Import the css breakpoint functions
+@import "../../breakpoints.scss";
+
+// for phone devices
+@include media("<=phone") {
+  nav {
+    margin: 0;
+    background: rgb(32, 31, 31);
+    div {
+      display: grid;
+      grid-template-columns: 2fr 5fr 1fr;
+      h1 {
+        margin: 0;
+        padding: 10px;
+        display: block;
+        color: aliceblue;
+        &:hover {
+          cursor: pointer;
+        }
+      }
+      span {
+        color: white;
+        font-size: 25px;
+        display: block;
+        margin-left: auto;
+        padding: 10px;
+        opacity: 0.5;
+        transition: color 2s, opacity 2s;
+        &:hover {
+          opacity: 1;
+          color: greenyellow;
+          cursor: pointer;
+        }
+      }
+    }
+
+    ul {
+      padding: 0;
+      margin: 10px;
+      margin-bottom: 15px;
+      /*justify-content: space-evenly;*/
+      list-style: none;
+      display: none;
+      a {
+        display: block;
+        padding: 6px 6px;
+        text-decoration: none;
+        color: aliceblue;
+        font-weight: 500;
+        text-transform: capitalize;
+      }
+    }
+  }
+  .add-show {
+    display: block;
+  }
+}

@@ -1,5 +1,6 @@
 import React from "react";
-import { NavBar } from "./Components/NavBar";
+import { NavBar } from "./Components/NavBar/NavBar";
+import "@fortawesome/fontawesome-free/css/all.min.css";
 import "./App.css";
 
 function App() {
