@@ -17,72 +17,71 @@
 @import "../../breakpoints.scss";
 
 // for phone devices
-@include media("<=phone") {
-  nav {
-    position: relative;
-    margin: 0;
-    background: rgb(32, 31, 31);
+
+nav {
+  position: relative;
+  margin: 0;
+  background: rgb(32, 31, 31);
+  div {
+    display: grid;
+    //justify-content: space-between;
+    grid-template-columns: 2fr 4fr 2fr;
+    h1 {
+      margin: 0 auto;
+      font-size: 2rem;
+      padding: 10px;
+      display: block;
+      color: aliceblue;
+      &:hover {
+        cursor: pointer;
+      }
+    }
     div {
-      display: grid;
-      //justify-content: space-between;
-      grid-template-columns: 2fr 4fr 2fr;
-      h1 {
-        margin: 0 auto;
-        font-size: 2rem;
-        padding: 10px;
-        display: block;
-        color: aliceblue;
-        &:hover {
-          cursor: pointer;
-        }
-      }
-      div {
-        display: flex;
-        justify-content: flex-end;
-      }
-      span {
-        color: white;
-        font-size: 25px;
-        display: block;
-        margin-right: auto;
-        margin-left: 10px;
-        padding: 10px;
-        opacity: 0.5;
-        transition: color 2s, opacity 2s;
-        &:hover {
-          opacity: 1;
-          color: greenyellow;
-          cursor: pointer;
-        }
-      }
+      display: flex;
+      justify-content: flex-end;
     }
-
-    ul {
-      padding: 0;
-      margin: 10px;
-      margin-bottom: 0px;
-      /*justify-content: space-evenly;*/
-      list-style: none;
-      display: none;
-      a {
-        display: block;
-        padding: 6px 6px;
-        text-decoration: none;
-        color: aliceblue;
-        font-weight: 500;
-        text-transform: capitalize;
+    span {
+      color: white;
+      font-size: 25px;
+      display: block;
+      margin-right: auto;
+      margin-left: 10px;
+      padding: 10px;
+      opacity: 0.5;
+      transition: color 2s, opacity 2s;
+      &:hover {
+        opacity: 1;
+        color: greenyellow;
+        cursor: pointer;
       }
     }
   }
 
-  .navbar-cart-details {
-    margin-left: auto;
-    width: 100%;
-    background: rgb(230, 230, 235);
-    height: 200px;
-    display: block;
+  ul {
+    padding: 0;
+    margin: 10px;
+    margin-bottom: 0px;
+    /*justify-content: space-evenly;*/
+    list-style: none;
+    display: none;
+    a {
+      display: block;
+      padding: 6px 6px;
+      text-decoration: none;
+      color: aliceblue;
+      font-weight: 500;
+      text-transform: capitalize;
+    }
   }
-  .show-narBar {
-    display: block;
-  }
+}
+
+.navbar-cart-details {
+  margin-left: auto;
+  width: 100%;
+  background: rgb(230, 230, 235);
+  height: 200px;
+  display: block;
+}
+.show-narBar {
+  display: block;
 }
