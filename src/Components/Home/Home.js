@@ -2,6 +2,8 @@ import React from "react";
 import { Hero } from "../Hero/Hero";
 import { Banner } from "../Banner/Banner";
 import { Services } from "../Services/Services";
+import { FeaturedRoom } from "../FeaturedRoom/FeaturedRoom";
+
 import "./Home.scss";
 export const Home = () => {
   return (
@@ -14,6 +16,7 @@ export const Home = () => {
         />
       </Hero>
       <Services />
+      <FeaturedRoom />
     </div>
   );
 };

@@ -1,9 +1,8 @@
 import React from "react";
 import { Title } from "../Title/Title";
 
-import "./Services.scss";
-
-const services = [
+// change this
+const featured = [
   {
     id: 1,
     img: <i className="fas fa-cocktail"></i>,
@@ -34,25 +33,11 @@ const services = [
   },
 ];
 
-export const Services = () => {
+export const FeaturedRoom = () => {
   return (
     <section className="services">
-      <Title title="services" />
-      <div className="services-center">
-        {services.map((service) => {
-          return (
-            <article className="service" key={service.id}>
-              <span>{service.img}</span>
-              <h6>{service.title}</h6>
-              <p>
-                {service.text.length >= 280
-                  ? `${service.text.slice(0, 280)} ...`
-                  : service.text}
-              </p>
-            </article>
-          );
-        })}
-      </div>
+      <Title title="featured rooms" />
+      <div className="services-center"></div>
     </section>
   );
 };
