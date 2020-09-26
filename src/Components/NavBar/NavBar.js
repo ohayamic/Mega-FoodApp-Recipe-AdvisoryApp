@@ -1,5 +1,6 @@
 import React from "react";
 import { Cart } from "../Cart/Cart";
+import { Link } from "react-router-dom";
 import "./NavBar.scss";
 export class NavBar extends React.Component {
   state = {
@@ -50,33 +51,24 @@ export class NavBar extends React.Component {
         </div>
         <ul className="span">
           <li>
-            <a href="/">home</a>
+            <Link to="/">home</Link>
           </li>
           <li>
-            <a href="/">about</a>
+            <Link to="/about">about</Link>
           </li>
           <li>
-            <a href="/">products</a>
+            <Link to="/rooms">rooms</Link>
           </li>
           <li>
-            <a href="/">application</a>
+            <Link to="/apps">application</Link>
           </li>
           <li>
-            <a href="/">others</a>
+            <Link to="/others">others</Link>
           </li>
         </ul>
         {!this.state.showCart ? (
           <section>
-            <div
-              className=""
-              style={{
-                marginLeft: "auto",
-                width: "100%",
-                background: "blue",
-                height: "200px",
-                display: "block",
-              }}
-            ></div>
+            <div className="navbar-cart-details"></div>
           </section>
         ) : null}
       </nav>

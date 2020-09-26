@@ -28,6 +28,7 @@
       grid-template-columns: 2fr 4fr 2fr;
       h1 {
         margin: 0 auto;
+        font-size: 2rem;
         padding: 10px;
         display: block;
         color: aliceblue;
@@ -72,6 +73,14 @@
         text-transform: capitalize;
       }
     }
+  }
+
+  .navbar-cart-details {
+    margin-left: auto;
+    width: 100%;
+    background: rgb(230, 230, 235);
+    height: 200px;
+    display: block;
   }
   .show-narBar {
     display: block;
