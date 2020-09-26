@@ -19,6 +19,7 @@
 // for phone devices
 @include media("<=phone") {
   nav {
+    position: relative;
     margin: 0;
     background: rgb(32, 31, 31);
     div {

@@ -1,0 +1,8 @@
+// Import the css breakpoint functions
+@import "./breakpoints.scss";
+// for phone devices
+@include media("<=phone") {
+  div {
+    position: relative;
+  }
+}

@@ -25,7 +25,7 @@ export class NavBar extends React.Component {
 
           <div></div>
           <span onClick={this.handleClick}>
-            <i className="fas fa-align-right" />
+            <i className="fas fa-align-justify" />
           </span>
         </div>
         <ul className="span">
