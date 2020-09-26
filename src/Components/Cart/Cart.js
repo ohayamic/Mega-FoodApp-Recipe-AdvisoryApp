@@ -1,34 +1,17 @@
 import React from "react";
 import "./Cart.scss";
-export class Cart extends React.Component {
-  state = {
-    showCart: true,
-  };
-  handleOpenCart = () => {
-    this.setState({
-      showCart: false,
-    });
-  };
-
-  handleCloseCart = () => {
-    this.setState({
-      showCart: true,
-    });
-  };
-  render() {
-    return (
-      <section>
-        {this.state.showCart ? (
-          <span onClick={this.handleOpenCart}>
-            <i className="fas fa-arrow-left"></i>
-          </span>
-        ) : null}
-        {!this.state.showCart ? (
-          <article onClick={this.handleCloseCart}>
-            <i className="fas fa-times-circle" />
-          </article>
-        ) : null}
-      </section>
-    );
-  }
-}
+export const Cart = ({ showCart, handleCloseCart, handleOpenCart }) => {
+  return (
+    <section>
+      {showCart ? (
+        <span onClick={handleOpenCart}>
+          <i className="fas fa-shopping-cart"></i>
+        </span>
+      ) : (
+        <span>
+          <i className="fas fa-times-circle" onClick={handleCloseCart} />
+        </span>
+      )}
+    </section>
+  );
+};
