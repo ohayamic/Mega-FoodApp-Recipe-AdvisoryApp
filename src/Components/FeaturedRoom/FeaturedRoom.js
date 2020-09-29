@@ -36,8 +36,11 @@ const featured = [
 export const FeaturedRoom = () => {
   return (
     <section className="services">
+      {/* The title component takes a prop*/}
       <Title title="featured rooms" />
-      <div className="services-center"></div>
+      <div className="services-center">
+        {/*Here goes the mapped list for display */}
+      </div>
     </section>
   );
 };
