@@ -30,11 +30,11 @@
 }
 /* end pf featured rooms */
 /* room */
-.room {
+.featured-room {
   box-shadow: var(--lightShadow);
   transition: var(--mainTransition);
 }
-.room:hover {
+.featured-room:hover {
   box-shadow: var(--darkShadow);
 }
 

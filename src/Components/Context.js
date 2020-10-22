@@ -21,8 +21,9 @@ export class RoomsContextProvider extends Component {
             loaded : false
        })
     }
-formatData(items){
 
+    // function to 
+    formatData(items){
     let itemTemplate = items.map((item)=>{
         let id = item.sys.id
         let images = item.fields.images.map((image)=>{
@@ -32,7 +33,7 @@ formatData(items){
         return room
     })
     return itemTemplate
-}
+    }
     render() {
         return (
             <RoomsContext.Provider value={{...this.state}}>
