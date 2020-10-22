@@ -4,13 +4,15 @@ import { Home } from "./Components/Home/Home";
 import { Rooms } from "./Components/Rooms/Rooms";
 import { About } from "./Components/About/About";
 import { Apps } from "./Components/Apps/Apps";
-
+import {RoomsContextProvider} from "./Components/Context" // from the store
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import "./App.scss";
 
+
 function App() {
   return (
+  <RoomsContextProvider>
     <Router>
       <div className="App">
         <NavBar />
@@ -30,6 +32,7 @@ function App() {
         </Switch>
       </div>
     </Router>
+  </RoomsContextProvider>
   );
 }
 

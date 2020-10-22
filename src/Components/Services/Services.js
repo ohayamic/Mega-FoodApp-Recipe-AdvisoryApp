@@ -1,8 +1,8 @@
 import React from "react";
 import { Title } from "../Title/Title";
-
 import "./Services.scss";
 
+// Data for Services component
 const services = [
   {
     id: 1,

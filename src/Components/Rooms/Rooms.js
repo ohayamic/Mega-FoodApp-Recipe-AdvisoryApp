@@ -2,9 +2,14 @@ import React from "react";
 import { Hero } from "../Hero/Hero";
 import { Banner } from "../Banner/Banner";
 import { Title } from "../Title/Title";
+import {RoomsContext} from "../Context"
 
-export const Rooms = () => {
-  return (
+export class Rooms extends React.Component {
+  static contextType = RoomsContext
+  render(){
+    let {rooms, sortedRooms} = this.context
+    console.log(rooms, sortedRooms)
+    return (
     <div>
       <Hero hero="roomsHero">
         <Banner
@@ -15,4 +20,5 @@ export const Rooms = () => {
       <Title title="search rooms" />
     </div>
   );
+  }
 };
