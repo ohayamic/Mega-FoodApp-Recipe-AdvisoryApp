@@ -4,6 +4,7 @@ import { Home } from "./Components/Home/Home";
 import { Rooms } from "./Components/Rooms/Rooms";
 import { About } from "./Components/About/About";
 import { Apps } from "./Components/Apps/Apps";
+import {Footer} from "./Components/Footer"
 import DetailedRoom from "./Components/DetailedRoom/DetailedRoom"
 import {RoomsContextProvider} from "./Components/Context" // from the store
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
@@ -24,6 +25,7 @@ function App() {
           <Route exact path="/apps" component={Apps}/>
           <Route exact path="/:roomdetails" component={DetailedRoom}/>
         </Switch>
+        <Footer />
       </div>
     </Router>
   </RoomsContextProvider>

@@ -4,7 +4,7 @@ import { Hero } from "../Hero/Hero";
 import { Banner } from "../Banner/Banner";
 import { Services } from "../Services/Services";
 import { FeaturedRoom } from "../FeaturedRoom/FeaturedRoom";
-import {Footer} from "../Footer"
+
 
 import "./Home.scss";
 export const Home = () => {
@@ -19,7 +19,7 @@ export const Home = () => {
       </Hero>
       <Services />
       <FeaturedRoom />
-      <Footer />
+    
 
     </div>
   );
