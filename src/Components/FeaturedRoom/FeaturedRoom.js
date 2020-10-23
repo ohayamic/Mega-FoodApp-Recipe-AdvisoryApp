@@ -1,7 +1,7 @@
 import React from "react";
 import ImageGif from "../../images/gif/loading-arrow.gif"
 import { Title } from "../Title/Title";
-import {Link} from "react-router-dom"
+import {SingleRoom} from "../Rooms/SingleRoom"
 import {RoomsContext} from "../Context"
 import "./featuredRoom.scss"
 
@@ -14,19 +14,9 @@ export class FeaturedRoom  extends React.Component {
     //console.log(featuredRooms)
     const featuredSection = !loaded ? featuredRooms.map((featuredRoom, index)=>{
       return(
-      <div className="featured-room" key={index}>
-        <div className="img-container">
-        <img src={featuredRoom.images[0]}  alt="featured"/>
-        <div className="price-top">
-          <h6>#{featuredRoom.price}</h6>
-          <p>per night</p>
-        </div>
-        <Link  to ={`/${featuredRoom.name}`} className="btn-primary room-link">Preview</Link>
-        </div>
-        <div className="room-info">{featuredRoom.name} </div>
-      </div>
+      <SingleRoom room={featuredRoom} key={index}/>
       )
-    }):<img src={ImageGif} alt="" style={{margin: "0 auto"}} />
+    }):<img src={ImageGif} alt="img" style={{margin: "0 auto"}} />
     
     
     return (

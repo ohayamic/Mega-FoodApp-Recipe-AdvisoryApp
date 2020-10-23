@@ -9,11 +9,11 @@ export default class DetailedRoom extends Component {
     static contextType = RoomsContext
     
     render() {
-        let {featuredRooms} = this.context
+        let {rooms} = this.context
         let roomdetails = this.props.match.params.roomdetails
-        console.log(roomdetails)
-        let getRoomDetails = featuredRooms.filter(featuredRoom=>featuredRoom.name===roomdetails)
-        console.log(getRoomDetails)
+        //console.log(roomdetails)
+        let getRoomDetails = rooms.filter(room=>room.name===roomdetails)
+        
         let image = getRoomDetails.map((item)=>{
             let img = item.images[0]
             return img
