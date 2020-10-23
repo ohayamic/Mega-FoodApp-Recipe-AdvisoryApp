@@ -13,12 +13,12 @@ export class RoomsContextProvider extends Component {
     }
     componentDidMount(){
         let rooms = this.formatData(Data)
-        let sortedRooms = this.sortedRooms()
+        //let sortedRooms = this.sortedRooms()
         let featuredRooms = rooms.filter(room => room.featured === true)
        this.setState({
             rooms,
             featuredRooms,
-            sortedRooms,
+            sortedRooms:[],
             loaded : false
        })
     }

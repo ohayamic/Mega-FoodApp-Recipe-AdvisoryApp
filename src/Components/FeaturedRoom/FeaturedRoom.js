@@ -21,7 +21,7 @@ export class FeaturedRoom  extends React.Component {
           <h6>#{featuredRoom.price}</h6>
           <p>per night</p>
         </div>
-        <Link  to ={`/${featuredRoom.name}`} className="btn-primary room-link">To Room</Link>
+        <Link  to ={`/${featuredRoom.name}`} className="btn-primary room-link">Preview</Link>
         </div>
         <div className="room-info">{featuredRoom.name} </div>
       </div>

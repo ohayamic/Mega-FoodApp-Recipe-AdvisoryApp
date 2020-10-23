@@ -11,12 +11,14 @@ export default class DetailedRoom extends Component {
     render() {
         let {featuredRooms} = this.context
         let roomdetails = this.props.match.params.roomdetails
+        console.log(roomdetails)
         let getRoomDetails = featuredRooms.filter(featuredRoom=>featuredRoom.name===roomdetails)
-        //console.log(getRoomDetails)
+        console.log(getRoomDetails)
         let image = getRoomDetails.map((item)=>{
             let img = item.images[0]
             return img
         })
+        
         const Div = styled.header`
                     min-height: calc(70vh - 66px);
                     background: url(${image}) center/cover no-repeat;
