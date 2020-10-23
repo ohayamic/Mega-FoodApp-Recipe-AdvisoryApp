@@ -1,7 +1,16 @@
 import React, { Component } from 'react'
 import {RoomsContext} from "../Context"
+import styled from 'styled-components'
 import "./DetailedRoom.scss"
 
+const Div = styled.header`
+   min-height: calc(70vh - 66px);
+    background: url("../../images/defaultBcg.jpeg") center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+`
 export default class DetailedRoom extends Component {
     static contextType = RoomsContext
     
@@ -46,6 +55,9 @@ export default class DetailedRoom extends Component {
         })
         return (
             <>
+            <Div>
+                
+            </Div>
                 {/** add the hero page with the first image */}
                 {displayDetails}
             </>
