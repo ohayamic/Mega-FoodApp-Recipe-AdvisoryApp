@@ -2,6 +2,14 @@ import React from "react";
 import { Cart } from "../Cart/Cart";
 import { Link } from "react-router-dom";
 import "./NavBar.scss";
+
+const links = [
+{a:"/", link:"home"},
+{a:"/about", link:"about"},
+{a:"/rooms", link:"rooms"},
+{a:"/apps", link:"application"},
+{a:"/others", link:"others"}
+]
 export class NavBar extends React.Component {
   state = {
     isView: true,
@@ -52,21 +60,11 @@ export class NavBar extends React.Component {
           </div>
         </div>
         <ul className="span">
-          <li onClick={this.handleClick}>
-            <Link to="/" >home</Link>
-          </li>
-          <li onClick={this.handleClick}>
-            <Link to="/about">about</Link>
-          </li>
-          <li onClick={this.handleClick}>
-            <Link to="/rooms">rooms</Link>
-          </li>
-          <li onClick={this.handleClick}>
-            <Link to="/apps">application</Link>
-          </li>
-          <li onClick={this.handleClick}>
-            <Link to="/others">others</Link>
-          </li>
+          {links.map((lnk, index)=>{
+            return(<li onClick={this.handleClick} key={index}>
+            <Link to={`${lnk.a}`} >{lnk.link}</Link>
+          </li>)
+          })}
         </ul>
         {!this.state.showCart ? (
           <section>
