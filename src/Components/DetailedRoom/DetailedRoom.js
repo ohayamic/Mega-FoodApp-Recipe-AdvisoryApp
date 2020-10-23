@@ -1,16 +1,10 @@
 import React, { Component } from 'react'
+import {Banner} from "../Banner/Banner"
+import {Link} from "react-router-dom"
 import {RoomsContext} from "../Context"
 import styled from 'styled-components'
 import "./DetailedRoom.scss"
 
-const Div = styled.header`
-   min-height: calc(70vh - 66px);
-    background: url("../../images/defaultBcg.jpeg") center/cover no-repeat;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-`
 export default class DetailedRoom extends Component {
     static contextType = RoomsContext
     
@@ -19,6 +13,19 @@ export default class DetailedRoom extends Component {
         let roomdetails = this.props.match.params.roomdetails
         let getRoomDetails = featuredRooms.filter(featuredRoom=>featuredRoom.name===roomdetails)
         console.log(getRoomDetails)
+        let image = getRoomDetails.map((item)=>{
+            let img = item.images[0]
+            return img
+        })
+        const Div = styled.header`
+                    min-height: calc(70vh - 66px);
+                    background: url(${image}) center/cover no-repeat;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+
+`
+        //console.log(getRoomDetails)
         const displayDetails = getRoomDetails.map((item)=>{
             return(
                 <div className="single-room" key={item.id}>
@@ -56,7 +63,9 @@ export default class DetailedRoom extends Component {
         return (
             <>
             <Div>
-                
+                <Banner title="details" > 
+                <Link to ="" >Back to Home</Link>
+                </Banner>
             </Div>
                 {/** add the hero page with the first image */}
                 {displayDetails}
