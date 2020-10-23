@@ -4,6 +4,7 @@ import { Home } from "./Components/Home/Home";
 import { Rooms } from "./Components/Rooms/Rooms";
 import { About } from "./Components/About/About";
 import { Apps } from "./Components/Apps/Apps";
+import DetailedRoom from "./Components/DetailedRoom/DetailedRoom"
 import {RoomsContextProvider} from "./Components/Context" // from the store
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import "@fortawesome/fontawesome-free/css/all.min.css";
@@ -17,18 +18,11 @@ function App() {
       <div className="App">
         <NavBar />
         <Switch>
-          <Route exact path="/">
-            <Home />
-          </Route>
-          <Route exact path="/about">
-            <About />
-          </Route>
-          <Route exact path="/rooms">
-            <Rooms />
-          </Route>
-          <Route exact path="/apps">
-            <Apps />
-          </Route>
+          <Route exact path="/" component={Home} />
+          <Route exact path="/about" component={About} />
+          <Route exact path="/rooms" component={Rooms} />
+          <Route exact path="/apps" component={Apps}/>
+          <Route exact path="/:roomdetails" component={DetailedRoom}/>
         </Switch>
       </div>
     </Router>

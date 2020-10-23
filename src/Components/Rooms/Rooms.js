@@ -18,6 +18,7 @@ export class Rooms extends React.Component {
         <img src={room.images[0]}  alt="featured"/>
         <div className="price-top">
           <h6>#{room.price}</h6>
+          <p>per night</p>
         </div>
         <Link  to ="#" > <button className="btn-primary room-link">View Details</button></Link>
         </div>

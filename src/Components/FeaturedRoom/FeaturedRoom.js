@@ -11,7 +11,7 @@ export class FeaturedRoom  extends React.Component {
   static contextType = RoomsContext
   render(){
     let {featuredRooms, loaded} = this.context
-    console.log(featuredRooms)
+    //console.log(featuredRooms)
     const featuredSection = !loaded ? featuredRooms.map((featuredRoom, index)=>{
       return(
       <div className="featured-room" key={index}>
@@ -19,8 +19,9 @@ export class FeaturedRoom  extends React.Component {
         <img src={featuredRoom.images[0]}  alt="featured"/>
         <div className="price-top">
           <h6>#{featuredRoom.price}</h6>
+          <p>per night</p>
         </div>
-        <Link  to ="#" className="btn-primary room-link">Go Room</Link>
+        <Link  to ={`/${featuredRoom.name}`} className="btn-primary room-link">To Room</Link>
         </div>
         <div className="room-info">{featuredRoom.name} </div>
       </div>
