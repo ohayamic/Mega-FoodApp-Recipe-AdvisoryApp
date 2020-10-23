@@ -21,6 +21,8 @@ export class NavBar extends React.Component {
     }
   };
 
+  
+
   handleOpenCart = () => {
     this.setState({
       showCart: !this.state.showCart,
@@ -50,19 +52,19 @@ export class NavBar extends React.Component {
           </div>
         </div>
         <ul className="span">
-          <li>
-            <Link to="/">home</Link>
+          <li onClick={this.handleClick}>
+            <Link to="/" >home</Link>
           </li>
-          <li>
+          <li onClick={this.handleClick}>
             <Link to="/about">about</Link>
           </li>
-          <li>
+          <li onClick={this.handleClick}>
             <Link to="/rooms">rooms</Link>
           </li>
-          <li>
+          <li onClick={this.handleClick}>
             <Link to="/apps">application</Link>
           </li>
-          <li>
+          <li onClick={this.handleClick}>
             <Link to="/others">others</Link>
           </li>
         </ul>

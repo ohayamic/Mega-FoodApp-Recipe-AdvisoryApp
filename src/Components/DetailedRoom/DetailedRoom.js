@@ -12,7 +12,7 @@ export default class DetailedRoom extends Component {
         let {featuredRooms} = this.context
         let roomdetails = this.props.match.params.roomdetails
         let getRoomDetails = featuredRooms.filter(featuredRoom=>featuredRoom.name===roomdetails)
-        console.log(getRoomDetails)
+        //console.log(getRoomDetails)
         let image = getRoomDetails.map((item)=>{
             let img = item.images[0]
             return img
@@ -63,8 +63,8 @@ export default class DetailedRoom extends Component {
         return (
             <>
             <Div>
-                <Banner title="details" > 
-                <Link to ="" >Back to Home</Link>
+                <Banner title={roomdetails} > 
+                <Link to ="/"  className="btn-primary">Back to Home</Link>
                 </Banner>
             </Div>
                 {/** add the hero page with the first image */}
