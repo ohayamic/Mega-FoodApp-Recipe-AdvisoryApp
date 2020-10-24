@@ -11,6 +11,7 @@ export class RoomsContextProvider extends Component {
 
         
     }
+    
     componentDidMount(){
         let rooms = this.formatData(Data)
         //let sortedRooms = this.sortedRooms()

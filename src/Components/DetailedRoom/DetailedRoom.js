@@ -10,11 +10,11 @@ export default class DetailedRoom extends Component {
     
     render() {
         let {rooms} = this.context
-        let roomdetails = this.props.match.params.roomdetails
-        //console.log(roomdetails)
-        let getRoomDetails = rooms.filter(room=>room.name===roomdetails)
+        let roomdetails = this.props.match.params.roomdetails // get the slug from the URL
+        console.log(roomdetails)
+        let getRoomDetails = rooms.filter(room=>room.slug===roomdetails) // get the single room from the bunch
         
-        let image = getRoomDetails.map((item)=>{
+        let image = getRoomDetails.map((item)=>{ //get the first image from the images array
             let img = item.images[0]
             return img
         })

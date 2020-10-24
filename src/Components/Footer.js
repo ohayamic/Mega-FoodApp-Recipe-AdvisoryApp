@@ -2,7 +2,7 @@ import React from 'react'
 import styled from "styled-components"
 
 const FooterDiv = styled.footer`
-  padding: 1rem;
+  margin-top:2rem;
   padding: 3rem;
   text-align:center;
   background-color: gray;

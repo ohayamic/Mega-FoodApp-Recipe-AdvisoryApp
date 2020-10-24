@@ -5,20 +5,21 @@ import {Link} from "react-router-dom"
 import {SingleRoom} from "./SingleRoom"
 import { Banner } from "../Banner/Banner";
 import { Title } from "../Title/Title";
+import ImageGif from "../../images/gif/loading-arrow.gif"
 import {RoomsContext} from "../Context"
 import "./Rooms.scss"
 
 export class Rooms extends React.Component {
   static contextType = RoomsContext
   render(){
-    let {rooms, sortedRooms} = this.context  
+    let {rooms, sortedRooms, loaded} = this.context  
     
     // Get 
-    const Rooms = rooms.map((room)=>{ 
+    const Rooms = !loaded ? rooms.map((room)=>{ 
       return(
         <SingleRoom  room={room} key={room.id}/>
       )
-    })
+    }):<img src={ImageGif} alt="img" style={{margin: "0 auto"}} />
     return (
     <section>
       <Hero hero="roomsHero">
