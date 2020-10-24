@@ -7,7 +7,7 @@ const links = [
 {a:"/", link:"home"},
 {a:"/about", link:"about"},
 {a:"/rooms", link:"rooms"},
-{a:"/apps", link:"application"},
+{a:"/application", link:"application"},
 {a:"/others", link:"others"}
 ]
 export class NavBar extends React.Component {

@@ -11,14 +11,13 @@ export default class DetailedRoom extends Component {
     render() {
         let {rooms} = this.context
         let roomdetails = this.props.match.params.roomdetails // get the slug from the URL
-        console.log(roomdetails)
-        let getRoomDetails = rooms.filter(room=>room.slug===roomdetails) // get the single room from the bunch
-        
+        let getRoomDetails = rooms.filter(room=>room.slug===roomdetails) // get the single room from the bunch        
         let image = getRoomDetails.map((item)=>{ //get the first image from the images array
             let img = item.images[0]
             return img
         })
         
+        // using styled component to dynamically change the Hero image
         const Div = styled.header`
                     min-height: calc(70vh - 66px);
                     background: url(${image}) center/cover no-repeat;
@@ -26,47 +25,49 @@ export default class DetailedRoom extends Component {
                     align-items: center;
                     justify-content: center;
 
-`
+`       // check if rooms is empty or getRoomDetails is empty 
+    
         //console.log(getRoomDetails)
         const displayDetails = getRoomDetails.map((item)=>{
             return(
-                <div className="single-room" key={item.id}>
+            <section className="single-room" key={item.id}>
                 <div className="single-room-images" > 
                     {item.images.map((img, index) => {
                     return<img src={img} alt="img" key={index}/>})    } 
                 </div>
-                <div className="single-room-info">
+                <section className="single-room-info">
                     <div className="desc">
                         <h3> Details</h3>
                         <p>{item.description}</p>
                     </div>
-                    <div className="info">
+                    <article className="info">
                         <h3>Info</h3>
                         <h6>price : ${item.price}</h6>
                         <h6>size : {item.size} square foot</h6>
-                        <h6>max Capacity : {item.capacity} people</h6>
+                        {item.capacity<2? <h6>max Capacity : {item.capacity} person</h6>:<h6>max Capacity : {item.capacity} people</h6>}
                         {item.pet?<h6>pet allowed</h6>:<h6>pet not allowed</h6>}
                         {item.breakfast?<h6>free breakfast included</h6>:<h6>free breakfast excluded</h6>}       
-                    </div>
+                    </article>
                     
-                </div>
-                <div className="room-extras">
+                </section>
+                <section className="room-extras">
                     <h6>Extras</h6>
-                    <div className="extras">
+                    <ul className="extras">
                         {item.extras.map((extra, index)=>{
                             return<p key={index}> - {extra}</p>
                         })}
-                    </div>
+                    </ul>
 
-                    </div>
-                </div>
+                </section>
+            </section>
             )
         })
+
         return (
             <>
             <Div>
                 <Banner title={roomdetails} > 
-                <Link to ="/"  className="btn-primary">Back to Home</Link>
+                <Link to ="/rooms"  className="btn-primary">Back to Rooms</Link>
                 </Banner>
             </Div>
                 {/** add the hero page with the first image */}
