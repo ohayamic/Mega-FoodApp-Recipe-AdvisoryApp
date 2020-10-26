@@ -4,7 +4,6 @@ import {Filter} from "../Filter/Filter"
 import {Link} from "react-router-dom"
 import {SingleRoom} from "./SingleRoom"
 import { Banner } from "../Banner/Banner";
-import { Title } from "../Title/Title";
 import ImageGif from "../../images/gif/loading-arrow.gif"
 import {RoomsContext} from "../Context"
 import "./Rooms.scss"
@@ -15,7 +14,7 @@ export class Rooms extends React.Component {
     let {rooms, sortedRooms, loaded} = this.context  
     
     // Get 
-    const Rooms = !loaded ? rooms.map((room)=>{ 
+    const Rooms = !loaded ? sortedRooms.map((room)=>{ 
       return(
         <SingleRoom  room={room} key={room.id}/>
       )
@@ -29,10 +28,9 @@ export class Rooms extends React.Component {
         > <Link to="/" className="btn-primary">Back to Home</Link></Banner>
       </Hero>
       <div className="rooms">
-        <Title title="search rooms"/>
+        <Filter rooms={rooms}/>
         <div className="rooms-center">
-          <Filter />
-           {sortedRooms.length===0? Rooms: <p>Sorted rooms</p>}  
+           {Rooms}  
         </div>
       </div>
       

@@ -19,7 +19,7 @@ export class RoomsContextProvider extends Component {
        this.setState({
             rooms,
             featuredRooms,
-            sortedRooms:[],
+            sortedRooms:rooms,
             loaded : false
        })
     }
@@ -28,19 +28,12 @@ export class RoomsContextProvider extends Component {
     formatData(items){
     let itemTemplate = items.map((item)=>{
         let id = item.sys.id
-        let images = item.fields.images.map((image)=>{
-            return image.fields.file.url
-        })
+        let images = item.fields.images.map(image=>image.fields.file.url)
         // Put all data into an array 
         let room = {...item.fields, images, id}
         return room
     })
     return itemTemplate
-    }
-
-    // function to sort things from the rooms data
-    sortedRooms(){
-
     }
     render() {
         return (
