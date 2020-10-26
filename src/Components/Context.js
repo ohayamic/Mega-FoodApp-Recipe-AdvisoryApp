@@ -8,6 +8,16 @@ export class RoomsContextProvider extends Component {
         featuredRooms:[],
         sortedRooms: [],
         loaded:true,
+        handleChange : null,
+        maxSize: 0 ,
+        minSize: 1000,
+        minPrice: 0,
+        maxPrice: 600,
+        capacity:10,
+        pets: true,
+        type:"",
+        breakfast: true
+
 
         
     }
@@ -20,7 +30,16 @@ export class RoomsContextProvider extends Component {
             rooms,
             featuredRooms,
             sortedRooms:rooms,
-            loaded : false
+            loaded : false,
+            handleChange : this.handleChange,
+            maxSize: 0 ,
+            minSize: 1000,
+            minPrice: 0,
+            maxPrice: 600,
+            capacity:10,
+            pets: true,
+            type:"",
+            breakfast: true
        })
     }
 
@@ -34,6 +53,11 @@ export class RoomsContextProvider extends Component {
         return room
     })
     return itemTemplate
+    }
+
+    handleChange=(e)=>{
+        e.preventDefault()
+        console.log("name")
     }
     render() {
         return (
