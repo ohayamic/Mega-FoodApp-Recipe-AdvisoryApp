@@ -5,8 +5,8 @@ import "./NavBar.scss";
 
 const links = [
 {a:"/", link:"home"},
-{a:"/about", link:"about"},
 {a:"/rooms", link:"rooms"},
+{a:"/about", link:"about"},
 {a:"/application", link:"application"},
 {a:"/others", link:"others"}
 ]
