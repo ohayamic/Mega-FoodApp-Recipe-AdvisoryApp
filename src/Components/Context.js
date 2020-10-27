@@ -8,14 +8,13 @@ export class RoomsContextProvider extends Component {
         featuredRooms:[],
         sortedRooms: [],
         loaded:true,
-        handleChange : null,
         maxSize: 0 ,
         minSize: 1000,
         minPrice: 0,
         maxPrice: 600,
         capacity:10,
         pets: true,
-        type:"",
+        type:"all",
         breakfast: true
 
 
@@ -32,13 +31,13 @@ export class RoomsContextProvider extends Component {
             sortedRooms:rooms,
             loaded : false,
             handleChange : this.handleChange,
-            maxSize: 0 ,
-            minSize: 1000,
+            maxSize: 1000 ,
+            minSize: 0,
             minPrice: 0,
             maxPrice: 600,
             capacity:10,
             pets: true,
-            type:"",
+            type:"all",
             breakfast: true
        })
     }
@@ -57,7 +56,22 @@ export class RoomsContextProvider extends Component {
 
     handleChange=(e)=>{
         e.preventDefault()
-        console.log("name")
+        e.target.name = e.target.value 
+        console.log(e.target.value)
+    
+    }
+    filterItem =()=>{
+        let {rooms, type, capacity, price, minSize, maxSize, breakfast, pets} = this.state
+        let tempRooms = [...rooms]
+        capacity = parseInt(capacity)
+        price = parseInt(price)
+        if(type !=="all"){
+            tempRooms = tempRooms.filter(room => room.type === type)
+        }
+        if(capacity !== 1){
+            tempRooms = tempRooms.filter(room => room.capacity === capacity )
+        }
+        return tempRooms
     }
     render() {
         return (
