@@ -43,7 +43,7 @@ export const Filter = ({rooms}) => {
                     <form className="filter-form">
                         <div className="form-group">
                             <label htmlFor="type">Room Types</label>
-                            <select name="type" id="type" className="form-control" onChange={handleChange} defaultValue={type}>
+                            <select name="type" id="type" className="form-control" onChange={handleChange} value={type}>
                                 {types}
                             </select>
                         </div>
@@ -57,13 +57,13 @@ export const Filter = ({rooms}) => {
                         
                         <div className="form-group">
                             <label htmlFor="price">Room price #600</label>
-                            <input type="range" min={minPrice} max={maxPrice} defaultValue={price} className="form-control" name="price"  id="price" onChange={handleChange}/>
+                            <span>{price}<input type="range" min={minPrice} max={maxPrice} value={price} className="form-control" name="price"  id="price" onChange={handleChange}/></span>
                         </div>
                         <div className="form-group">
                             <label htmlFor="size">Room Sizes</label>
                             <div className="size-inputs">
-                                <input type="number" name="minSize" defaultValue={minSize} className="size-input" onChange={handleChange}></input>
-                                <input type="number" name="maxSize" defaultValue={maxSize} className="size-input" onChange={handleChange}></input>
+                                <input type="number" name="minSize" value={minSize} className="size-input" onChange={handleChange}></input>
+                                <input type="number" name="maxSize" value={maxSize} className="size-input" onChange={handleChange}></input>
                             </div>
                             
                         </div>

@@ -8,11 +8,12 @@ export class RoomsContextProvider extends Component {
         featuredRooms:[],
         sortedRooms: [],
         loaded:true,
-        maxSize: 0 ,
-        minSize: 1000,
+        maxSize: 1000 ,
+        minSize: 0,
         minPrice: 0,
         maxPrice: 600,
-        capacity:10,
+        capacity: 1,
+        price: 600,
         pets: true,
         type:"all",
         breakfast: true
@@ -30,15 +31,7 @@ export class RoomsContextProvider extends Component {
             featuredRooms,
             sortedRooms:rooms,
             loaded : false,
-            handleChange : this.handleChange,
-            maxSize: 1000 ,
-            minSize: 0,
-            minPrice: 0,
-            maxPrice: 600,
-            capacity:10,
-            pets: true,
-            type:"all",
-            breakfast: true
+            
        })
     }
 
@@ -56,26 +49,39 @@ export class RoomsContextProvider extends Component {
 
     handleChange=(e)=>{
         e.preventDefault()
-        e.target.name = e.target.value 
-        console.log(e.target.value)
+        let getTarget = e.target
+        let name = getTarget.name
+        let value = getTarget.value
+        console.log(typeof(e.target.value))
+        this.setState({
+            [name] : value
+        }, this.filterItem)
     
     }
     filterItem =()=>{
-        let {rooms, type, capacity, price, minSize, maxSize, breakfast, pets} = this.state
+        let {rooms, type, capacity, price, minSize, maxSize} = this.state
         let tempRooms = [...rooms]
-        capacity = parseInt(capacity)
-        price = parseInt(price)
+        let gettype = type
+        let capacities = parseInt(capacity)
+        let prices = parseInt(price)
         if(type !=="all"){
-            tempRooms = tempRooms.filter(room => room.type === type)
+            tempRooms = tempRooms.filter(room => room.type === gettype)
         }
         if(capacity !== 1){
-            tempRooms = tempRooms.filter(room => room.capacity === capacity )
+            tempRooms = tempRooms.filter(room => room.capacity >= capacities )
         }
-        return tempRooms
+        
+        if(prices <= 600){
+            tempRooms = tempRooms.filter(room=>room.price <= prices)
+        }
+        tempRooms = tempRooms.filter(room=>room.size >=minSize && room.size <=maxSize)
+        this.setState({
+            sortedRooms:tempRooms
+        })
     }
     render() {
         return (
-            <RoomsContext.Provider value={{...this.state}}>
+            <RoomsContext.Provider value={{...this.state, handleChange:this.handleChange}}>
                 {this.props.children}
             </RoomsContext.Provider>
         )
