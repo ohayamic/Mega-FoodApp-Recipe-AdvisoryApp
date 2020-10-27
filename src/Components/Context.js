@@ -52,7 +52,7 @@ export class RoomsContextProvider extends Component {
         let getTarget = e.target
         let name = getTarget.name
         let value = getTarget.value
-        console.log(typeof(e.target.value))
+        //console.log(typeof(e.target.value))
         this.setState({
             [name] : value
         }, this.filterItem)

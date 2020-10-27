@@ -57,7 +57,7 @@ export const Filter = ({rooms}) => {
                         
                         <div className="form-group">
                             <label htmlFor="price">Room price #600</label>
-                            <span>{price}<input type="range" min={minPrice} max={maxPrice} value={price} className="form-control" name="price"  id="price" onChange={handleChange}/></span>
+                            <span>{price}<input type="range" min={minPrice} max={maxPrice} value={price} className="form-control" name="price"  id="price" onChange={handleChange} style={{background:"blue", borderRadius:"50px", width:"100%", fontSize:"1rem"}}/></span>
                         </div>
                         <div className="form-group">
                             <label htmlFor="size">Room Sizes</label>

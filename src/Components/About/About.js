@@ -1,17 +1,22 @@
 import React from "react";
+import {Title} from "../Title/Title"
 import { Hero } from "../Hero/Hero";
 import { Banner } from "../Banner/Banner";
 
 export const About = () => {
   return (
-    <div>
+    <section>
       <Hero>
-        {" "}
         <Banner
           title="About company"
-          subtitle="things about the organisation"
+          subtitle="things to know about the App"
         />
       </Hero>
-    </div>
+
+      <article style={{margin:"5rem auto"}}> 
+          <Title title="application details"/>
+          
+      </article>
+    </section>
   );
 };
