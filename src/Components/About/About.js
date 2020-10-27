@@ -15,7 +15,7 @@ export const About = () => {
 
       <article style={{margin:"5rem auto"}}> 
           <Title title="application details"/>
-          
+          <h3>Still in progress .....</h3>
       </article>
     </section>
   );
