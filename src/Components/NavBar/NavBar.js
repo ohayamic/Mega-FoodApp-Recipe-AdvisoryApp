@@ -43,15 +43,19 @@ export class NavBar extends React.Component {
     });
   };
   render() {
+
+    // adds functionallity to the navbar to change its position 
+    // when ther is a scroll
     window.addEventListener("scroll", (event) => {
     let scroll = document.querySelector(".container")
     if(window.scrollY >= 100){
       scroll.style.position = "fixed"
+      scroll.style.width = "100%"
+      scroll.style.zIndex = "1"
     }
     else{
       scroll.style.position = "relative"
-      scroll.style.width = "100%"
-      scroll.style.zIndex = "1"
+      
 
     }
     //let scroll = window.scrollY;
