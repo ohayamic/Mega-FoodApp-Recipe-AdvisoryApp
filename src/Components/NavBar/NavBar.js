@@ -32,9 +32,13 @@ export class NavBar extends React.Component {
   
 
   handleOpenCart = () => {
+    const span = document.querySelector(".span");
     this.setState({
       showCart: !this.state.showCart,
     });
+    if(this.state.isView === false){
+      span.classList.remove("show-narBar")
+    }
   };
 
   handleCloseCart = () => {
