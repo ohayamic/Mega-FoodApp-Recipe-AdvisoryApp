@@ -3,6 +3,7 @@ import { Cart } from "../Cart/Cart";
 import { Link } from "react-router-dom";
 import "./NavBar.scss";
 
+// a constant to hold the links in an array
 const links = [
 {a:"/", link:"home"},
 {a:"/rooms", link:"rooms"},
@@ -10,6 +11,7 @@ const links = [
 {a:"/application", link:"application"},
 {a:"/others", link:"others"}
 ]
+
 export class NavBar extends React.Component {
   state = {
     isView: true,
