@@ -38,6 +38,9 @@ export class NavBar extends React.Component {
     });
     if(this.state.isView === false){
       span.classList.remove("show-narBar")
+      this.setState({
+        isView : !this.state.isView
+      })
     }
   };
 
