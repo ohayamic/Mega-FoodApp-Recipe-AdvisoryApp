@@ -43,8 +43,22 @@ export class NavBar extends React.Component {
     });
   };
   render() {
+    window.addEventListener("scroll", (event) => {
+    let scroll = document.querySelector(".container")
+    if(window.scrollY >= 100){
+      scroll.style.position = "fixed"
+    }
+    else{
+      scroll.style.position = "relative"
+      scroll.style.width = "100%"
+      scroll.style.zIndex = "1"
+
+    }
+    //let scroll = window.scrollY;
+    
+});
     return (
-      <nav className="NarBar-container">
+      <nav className="container">
         <div>
           <span onClick={this.handleClick}>
             <i className="fas fa-align-justify" />
